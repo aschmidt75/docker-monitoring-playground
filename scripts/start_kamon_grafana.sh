@@ -8,7 +8,7 @@
 NAME=kamon-grafana-dashboard
 
 ( sudo docker stop $NAME && sudo docker rm $NAME ) >/dev/null 2>&1
-sudo docker run -d -p 8503:80 -p 172.16.0.42:8125:8125/udp -p 8126:8126 \
+sudo docker run -d -p 8503:80 -p 172.17.42.1:8125:8125/udp -p 8126:8126 \
 	--name $NAME \
 	kamon/grafana_graphite
 
